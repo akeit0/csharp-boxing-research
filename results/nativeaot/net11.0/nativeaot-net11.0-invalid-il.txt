@@ -1,0 +1,4 @@
+runtime=.NET 11.0.0-rc.3.26522.148; arch=X64
+execution=NativeAOT; dynamicCodeCompiled=False
+corelib=System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+exitCode=-1073740286

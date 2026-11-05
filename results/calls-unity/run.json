@@ -1,0 +1,14 @@
+{
+  "kind": "unity",
+  "assemblies": [
+    {
+      "file": "Research.Core.dll",
+      "sha256": "3D66B0C08882E7817ABB42EEC10C42792F3FF1D8DE981A24DEE928A3A0F4C11B"
+    },
+    {
+      "file": "Research.IL.dll",
+      "sha256": "131F7243DE5F8AF88171E13E86DF7D984A101B7F6C8780CE8C295ABA8272DFF8"
+    }
+  ],
+  "createdUtc": "2026-11-05T12:40:40.1832545Z"
+}

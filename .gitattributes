@@ -1,0 +1,5 @@
+* text=auto
+# Preserve spacing emitted by Unity and the code generators.
+unity/**/*.meta -whitespace
+unity/*/ProjectSettings/** -whitespace
+results/codegen/** -whitespace

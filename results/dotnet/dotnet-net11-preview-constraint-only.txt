@@ -1,0 +1,10 @@
+runtime=.NET 11.0.0-rc.3.26522.148; arch=X64
+execution=JIT; dynamicCodeCompiled=True
+corelib=System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+mode=constraint-only; pointerSize=8; mono=False
+allocation-calibration; objectBytes=24; byteCounterValid=True
+constraint-only-metadata-count=1
+constraint-only-IL-error=System.Security.VerificationException; Method DisposeResearch.IlCalls.ConstraintOnly: type argument 'System.Int32' violates the constraint of type parameter 'T'.
+constraint-only-reflection-error=System.ArgumentException; GenericArguments[0], 'System.Int32', on 'Int32 ConstraintOnly[T]()' violates the constraint of type 'T'.
+constraint-only-reflection-inner=System.Security.VerificationException; Method DisposeResearch.IlCalls.ConstraintOnly: type argument 'System.Int32' violates the constraint of type parameter 'T'.
+exitCode=0

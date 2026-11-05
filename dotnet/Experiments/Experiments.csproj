@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <ExperimentFramework Condition="'$(ExperimentFramework)' == ''">net10.0</ExperimentFramework>
+    <TargetFramework>$(ExperimentFramework)</TargetFramework>
+    <PublishAot Condition="'$(NativeAot)' == 'true'">true</PublishAot>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../shared/Research.Core/Research.Core.csproj" />
+  </ItemGroup>
+</Project>

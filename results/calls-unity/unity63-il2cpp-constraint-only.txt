@@ -1,0 +1,10 @@
+unity=6000.3.28f1; editor=False; runtime=Mono Unity IL2CPP (Nov  5 2026 20:05:54); arch=X64
+corelib=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+backend=IL2CPP
+mode=constraint-only; pointerSize=8; mono=True
+allocation-calibration; objectBytes=0; byteCounterValid=False
+constraint-only-metadata-count=1
+constraint-only-IL-result=123
+constraint-only-reflection-constructed=Int32 ConstraintOnly[Int32]()
+constraint-only-reflection-result=123
+exitCode=0

@@ -1,0 +1,8 @@
+runtime=.NET 11.0.0-rc.3.26522.148; arch=X64
+execution=NativeAOT; dynamicCodeCompiled=False
+corelib=System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+mode=metadata-constraint; pointerSize=8; mono=False
+allocation-calibration; objectBytes=24; byteCounterValid=True
+metadata-definition-constraints=1
+metadata-invocation=System.ArgumentException; 'System.Int32', on 'Void ConstrainedMetadata[T](T ByRef)' violates the constraint of type 'T'.
+exitCode=0

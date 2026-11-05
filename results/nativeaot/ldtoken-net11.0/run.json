@@ -1,0 +1,14 @@
+{
+  "kind": "nativeaot-net11.0",
+  "assemblies": [
+    {
+      "file": "Research.Core.dll",
+      "sha256": "5B4D9446F688158DC710782C01DD4AC7014F7C96C6E54F03EE2082CE881A425E"
+    },
+    {
+      "file": "Research.IL.dll",
+      "sha256": "1F33E8F00AE632BC43AD70B569D07FF6387B0FE0B08BA120FDAAF3942259BB7E"
+    }
+  ],
+  "createdUtc": "2026-11-05T15:22:56.5668804Z"
+}

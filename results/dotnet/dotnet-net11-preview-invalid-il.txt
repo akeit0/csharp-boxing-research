@@ -1,0 +1,5 @@
+runtime=.NET 11.0.0-rc.3.26522.148; arch=X64
+execution=JIT; dynamicCodeCompiled=True
+corelib=System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+invalid-il=System.EntryPointNotFoundException; Entry point was not found.
+exitCode=0

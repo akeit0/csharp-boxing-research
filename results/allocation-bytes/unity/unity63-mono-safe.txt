@@ -1,0 +1,30 @@
+unity=6000.3.28f1; editor=False; runtime=Mono 6.13.0 (Visual Studio built mono); arch=X64
+corelib=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+backend=JIT; mono=True
+allocation-byte-counter=GC Allocated In Frame; valid=True; unit=Bytes; scope=all-threads-in-current-frame
+mode=safe; pointerSize=8; mono=True
+allocation-calibration; objectBytes=16; byteCounterValid=True
+DIM; capturedType=DisposeResearch.Experiments.DefaultValue; isValueType=True; originalCount=0
+DIM; afterDisposeOriginal=0; boxCount=1; sameObject=True
+DIM; constrainedDefaultDisposeOriginal=0
+allocation; case=box-escape; iterations=100000; bytes=2000000; events=100000; bytesPerCall=20.000
+allocation; case=is-IDisposable; iterations=100000; bytes=2000000; events=100000; bytesPerCall=20.000
+allocation; case=constrained-CSharp; iterations=100000; bytes=0; events=0; bytesPerCall=0.000
+allocation; case=DIM-capture-escape; iterations=100000; bytes=2000000; events=100000; bytesPerCall=20.000
+allocation; case=DIM-constrained-default; iterations=100000; bytes=2000000; events=100000; bytesPerCall=20.000
+allocation; case=cached-box; iterations=100000; bytes=0; events=0; bytesPerCall=0.000
+allocation; case=unconstrained-IL; iterations=100000; bytes=0; events=0; bytesPerCall=0.000
+allocation; case=guarded-IL; iterations=100000; bytes=0; events=0; bytesPerCall=0.000
+allocation; case=cached-reflection-dispatch; iterations=100000; bytes=0; events=0; bytesPerCall=0.000
+mutation; counter=1005000; dimOriginal=0
+unproven-generic-call=accepted
+IL-guard; nonDisposable=7; validMetadataCalls=2
+IL-shapes; explicit=1; class=2; managedField=1; fieldCleared=True
+exception; directILMutation=1
+exception; articleStyleMutation=0
+exception; finallyCopyMutation=1
+metadataConstraint=System.ArgumentException
+IL-genericConstraintCount=0
+nullableAssignable=False; nullableBoxType=DisposeResearch.Experiments.Counter
+done; checksum=0
+exitCode=0

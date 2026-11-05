@@ -1,0 +1,8 @@
+unity=7000.0.0a12; editor=False; runtime=.NET 10.0.10-dev; arch=X64
+corelib=System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+backend=IL2CPP
+mode=forge-gc; pointerSize=8; mono=False
+allocation-calibration; objectBytes=0; byteCounterValid=False
+forge-layout; payloadOffset=16; prefix=0; headerWord=0x1f8d15f1670; il2cpp=True; seedBox=True
+forge-result; first=42; final=100043; bytes=-1; forcedGC=True; outerBytesIntact=True
+exitCode=0

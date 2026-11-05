@@ -1,0 +1,8 @@
+unity=6000.3.28f1; editor=False; runtime=Mono Unity IL2CPP (Nov  5 2026 20:05:54); arch=X64
+corelib=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+backend=IL2CPP
+mode=forge-gc; pointerSize=8; mono=True
+allocation-calibration; objectBytes=0; byteCounterValid=False
+forge-layout; payloadOffset=16; prefix=0; headerWord=0x1aa70119a00; il2cpp=True; seedBox=True
+forge-result; first=42; final=100043; bytes=-1; forcedGC=True; outerBytesIntact=True
+exitCode=0

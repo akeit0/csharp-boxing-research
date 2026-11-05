@@ -1,0 +1,10 @@
+unity=7000.0.0a12; editor=False; runtime=.NET 10.0.10-dev; arch=X64
+corelib=System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+backend=IL2CPP
+mode=constraint-only; pointerSize=8; mono=False
+allocation-calibration; objectBytes=0; byteCounterValid=False
+constraint-only-metadata-count=1
+constraint-only-IL-result=123
+constraint-only-reflection-constructed=Int32 ConstraintOnly[Int32]()
+constraint-only-reflection-result=123
+exitCode=0

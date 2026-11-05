@@ -1,0 +1,8 @@
+runtime=.NET 10.0.14; arch=X64
+execution=JIT; dynamicCodeCompiled=True
+corelib=System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+mode=forge-typehandle; pointerSize=8; mono=False
+allocation-calibration; objectBytes=24; byteCounterValid=True
+forge-layout; payloadOffset=8; prefix=8; headerWord=0x7ffe3228ee58; il2cpp=False; seedBox=False
+forge-result; first=42; final=100042; bytes=0; forcedGC=False; outerBytesIntact=True
+exitCode=0

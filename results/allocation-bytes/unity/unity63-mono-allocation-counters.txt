@@ -1,0 +1,26 @@
+unity=6000.3.28f1; editor=False; runtime=Mono 6.13.0 (Visual Studio built mono); arch=X64
+corelib=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+backend=JIT; mono=True
+counter-api; profiler-gc-allocated-in-frame-valid=True; unit=Bytes
+counter-api; total-allocated=unavailable
+counter-probe; case=no-op; counter=current-thread; before=0; after=0; delta=0; collections=0
+counter-probe; case=one-object; counter=current-thread; before=0; after=0; delta=0; collections=0
+counter-probe; case=retained-100000-objects; counter=current-thread; before=0; after=0; delta=0; collections=4
+counter-probe; case=release-and-collect; counter=current-thread; before=0; after=0; delta=0; collections=1
+counter-probe; case=no-op; counter=total-memory; before=1232896; after=1232896; delta=0; collections=0
+counter-probe; case=one-object; counter=total-memory; before=1241088; after=1241088; delta=0; collections=0
+counter-probe; case=retained-100000-objects; counter=total-memory; before=1245184; after=2834432; delta=1589248; collections=4
+counter-probe; case=release-and-collect; counter=total-memory; before=2842624; after=1232896; delta=-1609728; collections=1
+counter-probe; case=no-op; counter=mono-used; before=1232896; after=1232896; delta=0; collections=0
+counter-probe; case=one-object; counter=mono-used; before=1236992; after=1236992; delta=0; collections=0
+counter-probe; case=retained-100000-objects; counter=mono-used; before=1245184; after=2834432; delta=1589248; collections=4
+counter-probe; case=release-and-collect; counter=mono-used; before=2838528; after=1232896; delta=-1605632; collections=1
+counter-probe; case=no-op; counter=unity-total-allocated; before=39638689; after=39638689; delta=0; collections=0
+counter-probe; case=one-object; counter=unity-total-allocated; before=39638689; after=39638689; delta=0; collections=0
+counter-probe; case=retained-100000-objects; counter=unity-total-allocated; before=39638689; after=39638689; delta=0; collections=4
+counter-probe; case=release-and-collect; counter=unity-total-allocated; before=39638689; after=39638689; delta=0; collections=1
+counter-probe; case=no-op; counter=profiler-gc-allocated-in-frame; before=7277864; after=7277864; delta=0; collections=0
+counter-probe; case=one-object; counter=profiler-gc-allocated-in-frame; before=7281970; after=7281986; delta=16; collections=0
+counter-probe; case=retained-100000-objects; counter=profiler-gc-allocated-in-frame; before=7286128; after=8886128; delta=1600000; collections=4
+counter-probe; case=release-and-collect; counter=profiler-gc-allocated-in-frame; before=8890378; after=8890378; delta=0; collections=1
+exitCode=0

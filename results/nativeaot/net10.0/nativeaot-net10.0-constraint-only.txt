@@ -1,0 +1,9 @@
+runtime=.NET 10.0.14; arch=X64
+execution=NativeAOT; dynamicCodeCompiled=False
+corelib=System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+mode=constraint-only; pointerSize=8; mono=False
+allocation-calibration; objectBytes=24; byteCounterValid=True
+constraint-only-metadata-count=1
+constraint-only-IL-result=123
+constraint-only-reflection-error=System.ArgumentException; 'System.Int32', on 'Int32 ConstraintOnly[T]()' violates the constraint of type 'T'.
+exitCode=0

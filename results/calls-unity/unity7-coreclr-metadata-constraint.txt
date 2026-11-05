@@ -1,0 +1,9 @@
+unity=7000.0.0a12; editor=False; runtime=.NET 10.0.10-dev; arch=X64
+corelib=System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+backend=CoreCLR
+mode=metadata-constraint; pointerSize=8; mono=False
+allocation-calibration; objectBytes=24; byteCounterValid=True
+metadata-definition-constraints=1
+metadata-invocation=System.ArgumentException; GenericArguments[0], 'System.Int32', on 'Void ConstrainedMetadata[T](T ByRef)' violates the constraint of type 'T'.
+metadata-inner=System.Security.VerificationException; Method DisposeResearch.IlCalls.ConstrainedMetadata: type argument 'System.Int32' violates the constraint of type parameter 'T'.
+exitCode=0

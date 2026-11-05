@@ -1,0 +1,29 @@
+runtime=.NET 10.0.14; arch=X64
+execution=JIT; dynamicCodeCompiled=True
+corelib=System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+mode=safe; pointerSize=8; mono=False
+allocation-calibration; objectBytes=24; byteCounterValid=True
+DIM; capturedType=DisposeResearch.Experiments.DefaultValue; isValueType=True; originalCount=0
+DIM; afterDisposeOriginal=0; boxCount=1; sameObject=True
+DIM; constrainedDefaultDisposeOriginal=0
+allocation; case=box-escape; iterations=100000; bytes=2400000; events=-1; bytesPerCall=24.000
+allocation; case=is-IDisposable; iterations=100000; bytes=2400000; events=-1; bytesPerCall=24.000
+allocation; case=constrained-CSharp; iterations=100000; bytes=0; events=-1; bytesPerCall=0.000
+allocation; case=DIM-capture-escape; iterations=100000; bytes=2400000; events=-1; bytesPerCall=24.000
+allocation; case=DIM-constrained-default; iterations=100000; bytes=2400000; events=-1; bytesPerCall=24.000
+allocation; case=cached-box; iterations=100000; bytes=0; events=-1; bytesPerCall=0.000
+allocation; case=unconstrained-IL; iterations=100000; bytes=0; events=-1; bytesPerCall=0.000
+allocation; case=guarded-IL; iterations=100000; bytes=0; events=-1; bytesPerCall=0.000
+allocation; case=cached-reflection-dispatch; iterations=100000; bytes=0; events=-1; bytesPerCall=0.000
+mutation; counter=505000; dimOriginal=0
+unproven-generic-call=System.Security.VerificationException; Method DisposeResearch.IlCalls.ConstrainedMetadata: type argument 'T' violates the constraint of type parameter 'T'.
+IL-guard; nonDisposable=7; validMetadataCalls=1
+IL-shapes; explicit=1; class=2; managedField=1; fieldCleared=True
+exception; directILMutation=1
+exception; articleStyleMutation=0
+exception; finallyCopyMutation=1
+metadataConstraint=System.ArgumentException
+IL-genericConstraintCount=0
+nullableAssignable=False; nullableBoxType=DisposeResearch.Experiments.Counter
+done; checksum=0
+exitCode=0

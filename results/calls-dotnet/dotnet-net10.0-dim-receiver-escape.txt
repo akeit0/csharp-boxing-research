@@ -1,0 +1,8 @@
+runtime=.NET 10.0.14; arch=X64
+execution=JIT; dynamicCodeCompiled=True
+corelib=System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+mode=dim-receiver-escape; pointerSize=8; mono=False
+allocation-calibration; objectBytes=24; byteCounterValid=True
+dim-escape; case=cached-box; firstCapturedTag=101; firstCaptureAfterReset=0; firstCaptureDuringSecondDispose=202; secondCapturedTag=202; sameReceiver=True
+dim-escape; case=stack-box; capturedTag=303; sameReceiver=True; retainedAddressEqualsStack=True; retainedTagAfterStackWrite=404
+exitCode=0

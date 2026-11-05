@@ -1,0 +1,16 @@
+runtime=.NET 11.0.0-rc.3.26522.148; arch=X64
+execution=NativeAOT; dynamicCodeCompiled=False
+corelib=System.Private.CoreLib, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+mode=stack-box; pointerSize=8; mono=False
+allocation-calibration; objectBytes=24; byteCounterValid=True
+stack-box; runtime=CoreClr; headerSource=TypeHandle; seedBox=False
+allocation; case=stack-box-counter-first-call; iterations=1; bytes=32; events=-1
+stack-box; case=counter; count=42
+allocation; case=stack-box-reference-first-call; iterations=1; bytes=32; events=-1
+allocation; case=stack-box-generic-first-call; iterations=1; bytes=32; events=-1
+stack-box; case=closed-generic; count=42; sameReference=True
+stack-box-gc; payloadOffset=8; aliveAfter=True; moved=True; slotMatchesTarget=True; count=1
+allocation; case=stack-box-counter; iterations=100000; bytes=0; events=-1; bytesPerCall=0.000
+allocation; case=stack-box-reference; iterations=100000; bytes=0; events=-1; bytesPerCall=0.000
+stack-box; observedCount=42
+exitCode=0

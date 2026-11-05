@@ -1,0 +1,33 @@
+unity=7000.0.0a12; editor=False; runtime=.NET 10.0.10-dev; arch=X64
+corelib=System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+backend=IL2CPP
+counter-api; profiler-gc-allocated-in-frame-valid=True; unit=Bytes
+counter-probe; case=no-op; counter=current-thread; before=0; after=0; delta=0; collections=0
+counter-probe; case=one-object; counter=current-thread; before=0; after=0; delta=0; collections=0
+counter-probe; case=retained-100000-objects; counter=current-thread; before=0; after=0; delta=0; collections=5
+counter-probe; case=release-and-collect; counter=current-thread; before=0; after=0; delta=0; collections=1
+counter-probe; case=no-op; counter=total-memory; before=2174976; after=2174976; delta=0; collections=0
+counter-probe; case=one-object; counter=total-memory; before=2179072; after=2179072; delta=0; collections=0
+counter-probe; case=retained-100000-objects; counter=total-memory; before=2179072; after=5365760; delta=3186688; collections=5
+counter-probe; case=release-and-collect; counter=total-memory; before=5369856; after=2174976; delta=-3194880; collections=1
+counter-probe; case=no-op; counter=mono-used; before=2174976; after=2174976; delta=0; collections=0
+counter-probe; case=one-object; counter=mono-used; before=2179072; after=2179072; delta=0; collections=0
+counter-probe; case=retained-100000-objects; counter=mono-used; before=2179072; after=5365760; delta=3186688; collections=5
+counter-probe; case=release-and-collect; counter=mono-used; before=5369856; after=2179072; delta=-3190784; collections=1
+counter-probe; case=no-op; counter=unity-total-allocated; before=56093465; after=56093465; delta=0; collections=0
+counter-probe; case=one-object; counter=unity-total-allocated; before=56093465; after=56093465; delta=0; collections=0
+counter-probe; case=retained-100000-objects; counter=unity-total-allocated; before=56093465; after=56093465; delta=0; collections=5
+counter-probe; case=release-and-collect; counter=unity-total-allocated; before=56093465; after=56093465; delta=0; collections=1
+counter-probe; case=no-op; counter=profiler-gc-allocated-in-frame; before=7290119; after=7290119; delta=0; collections=0
+counter-probe; case=one-object; counter=profiler-gc-allocated-in-frame; before=7295163; after=7295179; delta=16; collections=0
+counter-probe; case=retained-100000-objects; counter=profiler-gc-allocated-in-frame; before=7300259; after=8900259; delta=1600000; collections=5
+counter-probe; case=release-and-collect; counter=profiler-gc-allocated-in-frame; before=8905447; after=8905447; delta=0; collections=1
+counter-probe; case=no-op; counter=total-allocated-precise; before=0; after=0; delta=0; collections=0
+counter-probe; case=one-object; counter=total-allocated-precise; before=0; after=0; delta=0; collections=0
+counter-probe; case=retained-100000-objects; counter=total-allocated-precise; before=0; after=0; delta=0; collections=5
+counter-probe; case=release-and-collect; counter=total-allocated-precise; before=0; after=0; delta=0; collections=1
+counter-probe; case=no-op; counter=total-allocated-approximate; before=0; after=0; delta=0; collections=0
+counter-probe; case=one-object; counter=total-allocated-approximate; before=0; after=0; delta=0; collections=0
+counter-probe; case=retained-100000-objects; counter=total-allocated-approximate; before=0; after=0; delta=0; collections=5
+counter-probe; case=release-and-collect; counter=total-allocated-approximate; before=0; after=0; delta=0; collections=1
+exitCode=0

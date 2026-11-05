@@ -1,0 +1,17 @@
+unity=6000.3.28f1; editor=False; runtime=Mono 6.13.0 (Visual Studio built mono); arch=X64
+corelib=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+backend=JIT; mono=True
+allocation-byte-counter=GC Allocated In Frame; valid=True; unit=Bytes; scope=all-threads-in-current-frame
+mode=stack-box; pointerSize=8; mono=True
+allocation-calibration; objectBytes=16; byteCounterValid=True
+stack-box; runtime=Mono; headerSource=TypeHandle; seedBox=False
+allocation; case=stack-box-counter-first-call; iterations=1; bytes=240; events=5
+stack-box; case=counter; count=42
+allocation; case=stack-box-reference-first-call; iterations=1; bytes=144; events=3
+allocation; case=stack-box-generic-first-call; iterations=1; bytes=144; events=3
+stack-box; case=closed-generic; count=42; sameReference=True
+stack-box-gc; payloadOffset=16; aliveAfter=True; moved=False; slotMatchesTarget=True; count=1
+allocation; case=stack-box-counter; iterations=100000; bytes=0; events=0; bytesPerCall=0.000
+allocation; case=stack-box-reference; iterations=100000; bytes=0; events=0; bytesPerCall=0.000
+stack-box; observedCount=42
+exitCode=0

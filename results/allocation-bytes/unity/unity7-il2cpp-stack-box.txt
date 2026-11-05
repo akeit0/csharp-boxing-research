@@ -1,0 +1,17 @@
+unity=7000.0.0a12; editor=False; runtime=.NET 10.0.10-dev; arch=X64
+corelib=System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+backend=IL2CPP
+allocation-byte-counter=GC Allocated In Frame; valid=True; unit=Bytes; scope=all-threads-in-current-frame
+mode=stack-box; pointerSize=8; mono=False
+allocation-calibration; objectBytes=16; byteCounterValid=True
+stack-box; runtime=Il2Cpp; headerSource=TypeHandle; seedBox=False
+allocation; case=stack-box-counter-first-call; iterations=1; bytes=0; events=0
+stack-box; case=counter; count=42
+allocation; case=stack-box-reference-first-call; iterations=1; bytes=0; events=0
+allocation; case=stack-box-generic-first-call; iterations=1; bytes=0; events=0
+stack-box; case=closed-generic; count=42; sameReference=True
+stack-box-gc; payloadOffset=16; aliveAfter=True; moved=False; slotMatchesTarget=True; count=1
+allocation; case=stack-box-counter; iterations=100000; bytes=0; events=0; bytesPerCall=0.000
+allocation; case=stack-box-reference; iterations=100000; bytes=0; events=0; bytesPerCall=0.000
+stack-box; observedCount=42
+exitCode=0

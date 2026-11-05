@@ -1,0 +1,6 @@
+{
+  "publishAot": true,
+  "rid": "win-x64",
+  "sdk": "10.0.403",
+  "framework": "net10.0"
+}

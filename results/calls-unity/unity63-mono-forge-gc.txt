@@ -1,0 +1,8 @@
+unity=6000.3.28f1; editor=False; runtime=Mono 6.13.0 (Visual Studio built mono); arch=X64
+corelib=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+backend=JIT; mono=True
+mode=forge-gc; pointerSize=8; mono=True
+allocation-calibration; objectBytes=0; byteCounterValid=False
+forge-layout; payloadOffset=16; prefix=0; headerWord=0x1e9907ad530; il2cpp=False; seedBox=True
+forge-result; first=42; final=100043; bytes=-1; forcedGC=True; outerBytesIntact=True
+exitCode=0

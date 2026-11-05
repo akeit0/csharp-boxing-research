@@ -1,0 +1,9 @@
+runtime=.NET 10.0.14; arch=X64
+execution=JIT; dynamicCodeCompiled=True
+corelib=System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+Dispose; constraints=0; IL=02FE160100001B6F0400000A2A
+ConstrainedMetadata; constraints=1; IL=02FE160100001B6F0400000A2A
+CallConstrainedMetadataWithoutProof; constraints=0; IL=02280100002B2A
+IL-reference=netstandard, Version=2.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+TypeHandle; IL=D00100001B2A
+exitCode=0

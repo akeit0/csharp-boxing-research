@@ -1,0 +1,14 @@
+{
+  "kind": "dotnet",
+  "createdUtc": "2026-11-05T16:00:03.3198355Z",
+  "assemblies": [
+    {
+      "sha256": "A5B737B5E2770E67452FF27D096D8C51FB8422DED389FF6B8588584D23641B21",
+      "file": "Research.Core.dll"
+    },
+    {
+      "sha256": "1F33E8F00AE632BC43AD70B569D07FF6387B0FE0B08BA120FDAAF3942259BB7E",
+      "file": "Research.IL.dll"
+    }
+  ]
+}
