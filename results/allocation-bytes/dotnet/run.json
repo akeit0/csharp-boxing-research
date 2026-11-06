@@ -1,14 +1,14 @@
 {
   "kind": "dotnet",
-  "createdUtc": "2026-11-05T16:00:03.3198355Z",
+  "createdUtc": "2026-11-06T01:43:02.1595806Z",
   "assemblies": [
     {
-      "sha256": "A5B737B5E2770E67452FF27D096D8C51FB8422DED389FF6B8588584D23641B21",
-      "file": "Research.Core.dll"
+      "file": "Research.Core.dll",
+      "sha256": "E7D3F9CCBA0B8F1635B0D73D0D903FA76DCF5C0E7B15492DA11497F49970629C"
     },
     {
-      "sha256": "1F33E8F00AE632BC43AD70B569D07FF6387B0FE0B08BA120FDAAF3942259BB7E",
-      "file": "Research.IL.dll"
+      "file": "Research.IL.dll",
+      "sha256": "07109C32FA97433F09E885A42A15D9AA599964208812E4D92A29DAFE619B7445"
     }
   ]
 }

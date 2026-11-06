@@ -1,6 +1,6 @@
 # 参照資料
 
-2026 年 11 月 5 日に確認。仕様、ランタイム実装、計測 API の参照先。
+2026 年 11 月 5～6 日に確認。仕様、ランタイム実装、計測 API の参照先。
 
 | 資料 | 調査に使う点 |
 | --- | --- |
@@ -15,7 +15,10 @@
 | [Native AOT v10.0.0 RuntimeTypeHandle.cs](https://github.com/dotnet/runtime/blob/v10.0.0/src/coreclr/nativeaot/System.Private.CoreLib/src/System/RuntimeTypeHandle.cs) | MethodTable を指すハンドル |
 | [NTSTATUS の一覧](https://learn.microsoft.com/ja-jp/openspecs/windows_protocols/ms-erref/596a1078-e883-4972-9bbc-49e60bebca55) | 0xC0000602 = STATUS_FAIL_FAST_EXCEPTION |
 | [CoreCLR v10.0.0 typehandle.h](https://github.com/dotnet/runtime/blob/v10.0.0/src/coreclr/vm/typehandle.h) | 値型の TypeHandle と MethodTable |
-| [Stack Allocation Enhancements](https://github.com/dotnet/runtime/issues/104936) | stack-allocated boxes の呼称と CoreCLR のスタック配置 |
+| [PR #103361](https://github.com/dotnet/runtime/pull/103361) | .NET 9 の JIT による、エスケープしないボックスのスタック配置 |
+| [PR #104411](https://github.com/dotnet/runtime/pull/104411) | Native AOT / ReadyToRun のスタック配置対応 |
+| [Stack Allocation Enhancements #104936](https://github.com/dotnet/runtime/issues/104936) | オブジェクトのスタック配置の改善項目 |
+| [Issue #126501](https://github.com/dotnet/runtime/issues/126501) | 構造体から既定実装を呼ぶ際のボックス化を省く提案 |
 | [Generic 型の Explicit layout](https://github.com/dotnet/runtime/issues/97526) | `StackBox<T>` には Sequential を使用 |
 | [CoreCLR の GC 設計](https://github.com/dotnet/runtime/blob/v10.0.0/docs/design/coreclr/botr/garbage-collection.md) | GC の root と参照の更新 |
 | [GC.KeepAlive](https://learn.microsoft.com/en-us/dotnet/api/system.gc.keepalive) | object 参照の生存期間の指定 |

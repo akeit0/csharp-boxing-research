@@ -23,7 +23,7 @@
 | 呼び方 | .NET 10 / 11 RC | Unity 7 CoreCLR | Unity 6.3 Mono | Unity 6.3 / 7 IL2CPP |
 | --- | --- | --- | --- | --- |
 | ボックスを object に保持して Dispose | 24 B | 24 B | 20 B | 20 B |
-| is IDisposable | 24 B | 24 B | 20 B | 20 B |
+| `is IDisposable disposable` から呼び出し | 24 B | 24 B | 20 B | 20 B |
 | C# の制約付き呼び出し、型自身が実装 | 0 B | 0 B | 0 B | 0 B |
 | 既定実装の Capture を object に保持 | 24 B | 24 B | 20 B | 20 B |
 | 既定実装に任せた既定 Dispose | 24 B | 24 B | 20 B | 20 B |
@@ -127,6 +127,28 @@ CoreCLR は、外側 T に制約の証明がない呼び出しを Counter でも
 ## インターフェイスの既定実装からボックスへの参照を保存できる
 
 インターフェイスの既定実装内の `this` は、呼び出し先のボックス自身を指す。[CachedBox\<T\>](../shared/Research.Core/Implementations/CachedBox.cs) のようにボックスをプールする方式でも、その参照を保存するとクリア後や再利用中の内容を読める。スタック上に配置したボックスへの参照も保存できる。このような実装は通常ほぼなく、避けるべきもの。[確認コード](../shared/Research.Core/Experiments/DimReceiverEscape.cs)、[確認結果](../results/calls-dotnet/dotnet-net10.0-dim-receiver-escape.txt)。
+
+## ボックスの自動スタック配置
+
+.NET 9 で、エスケープ解析により参照がメソッドの外へ出ないと判断できるボックスを、JIT がスタックに置けるようになった。同じ最適化は Native AOT / ReadyToRun にも入っている。 [PR #103361](https://github.com/dotnet/runtime/pull/103361)、[PR #104411](https://github.com/dotnet/runtime/pull/104411)
+
+公式記事には、型判定とキャストを分ける書き方では以前からボックス化が消える例が載っている。.NET 9 の例では、新しいスタック配置の最適化によって、パターン変数を使う書き方でも生成コードからボックスが消えている。 [.NET 9 の性能改善](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-9/#object-stack-allocation)
+
+型判定とキャストを分けたコードの IL では、`isinst` と `castclass` がそれぞれ別の `box` を使う。CoreCLR の JIT は、型が確定する場合に `box; isinst; brtrue/brfalse` の型判定を定数にできる。呼び出し先も特定できれば、呼び出しだけが使うボックスを値のローカルコピーに置き換え、そのアドレスを構造体のメソッドに渡せる。下の 0 B のケースで確認できたのはこの値のコピーで、オブジェクトヘッダーの書き込みはない。[型判定の処理](https://github.com/dotnet/runtime/blob/v10.0.14/src/coreclr/jit/importer.cpp#L2947-L3005)、[呼び出しの処理](https://github.com/dotnet/runtime/blob/v10.0.14/src/coreclr/jit/importercalls.cpp#L8278-L8304)
+
+`Counter.Dispose` と呼び出し側のメソッドに `NoInlining` を付けたまま、型判定の書き方と、呼び出し後の値を `ref T` に書き戻したときの割り当てを測った。.NET 10 / 11 RC の CoreCLR と Native AOT で、結果は共通だった。
+
+| 呼び方 | 割り当て / 回 | 生成コード |
+| --- | --- | --- |
+| `value is IDisposable disposable` で得た変数から呼ぶ | 24 B | `CORINFO_HELP_NEWSFAST` でボックスを割り当て、値本体のアドレスを `Counter.Dispose` に渡す |
+| `value is IDisposable` の後に `((IDisposable)value).Dispose()` | 0 B | `Counter` の値だけをスタックにコピーし、そのアドレスを `Counter.Dispose` に渡す |
+| `value is IDisposable` の後にキャストして呼び、`value = (T)disposable` で書き戻す | 24 B | ヒープにボックスを割り当て、呼び出し後に値本体を元のアドレスへコピーする |
+
+型判定を分け、キャスト結果をローカル変数に入れて `Dispose` だけを呼ぶ形も確認した。SDK 10.0.403 の Release ビルドでは、キャストからそのまま呼ぶ形と IL が一致し、どちらも IL のローカル変数は 0 個だった。CoreCLR の .NET 10 / 11 RC では両方 0 B/回だった。
+
+書き戻しを行うケースでは元の `Count` は 41 から 42 になったが、呼び出しごとの割り当てが残った。`constrained.` が構造体自身の実装に解決される呼び出しでは、元の値への参照を直接渡せる。[測定ログ](../results/allocation-bytes)、[生成コード](../results/codegen/dispose-patterns.asm)、[呼び出しコード](../shared/Research.Core/Implementations/CSharpDispose.cs)
+
+インターフェイスの既定実装が選ばれる場合は、`constrained.` でも `this` がボックスを指すため、ボックス化の有無をプログラムから観測できる。[仕様の補遺](https://github.com/dotnet/runtime/blob/main/docs/design/specs/Ecma-335-Augments.md#default-interface-methods) [Issue #126501](https://github.com/dotnet/runtime/issues/126501) では、`this` が外に出ず、参照としての使用も限られる既定実装を、構造体のスタックコピーを使う呼び出しに変える案が提案されている。2026 年 11 月 6 日現在は Open、マイルストーンは Future。
 
 ## ボックスの手動スタック配置
 

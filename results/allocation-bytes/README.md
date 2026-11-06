@@ -14,4 +14,6 @@ Unity Mono / IL2CPP のバイトカウンターは `ProfilerRecorder` の `GC Al
 
 `safe` / `stack-box` の `bytes` は区間全体、`bytesPerCall` は 1 回当たりの値。`events` は補助的に残した `GC.Alloc` のイベント数。`run.json` に共通 DLL の SHA-256 を記録している。
 
+.NET の `safe` ログでは `is-IDisposable`、`is-IDisposable-then-cast`、`is-IDisposable-then-cast-with-write-back` を比較できる。生成コードは CoreCLR では `DOTNET_JitDisasm=DisposeResearch.CSharpDispose:Pattern*`、Native AOT では `--codegenopt:JitDisasm=DisposeResearch.CSharpDispose:Pattern*` で出力した。 [生成コードの抜粋](../codegen/dispose-patterns.asm)
+
 [計測条件](../../docs/experiments.md#計測条件)、[API の比較と結果](../../docs/findings.md#割り当てカウンターの比較)。

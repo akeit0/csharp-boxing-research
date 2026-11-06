@@ -42,6 +42,12 @@ internal static class DisposeExperiments
         AllocationMeter meter = context.Allocations;
         meter.Measure("box-escape", () => BoxAndEscape(ref counter));
         meter.Measure("is-IDisposable", () => CSharpDispose.Pattern(ref counter));
+        meter.Measure("is-IDisposable-then-cast", () => CSharpDispose.PatternThenCast(ref counter));
+        var writeBack = new Counter { Count = 41 };
+        CSharpDispose.PatternThenCastWithWriteBack(ref writeBack);
+        context.Log($"is-IDisposable-then-cast-with-write-back; countAfterFirstCall={writeBack.Count}");
+        meter.Measure("is-IDisposable-then-cast-with-write-back",
+            () => CSharpDispose.PatternThenCastWithWriteBack(ref writeBack));
         meter.Measure("constrained-CSharp", () => CSharpDispose.Constrained(ref counter));
         meter.Measure("DIM-capture-escape", () => escapedBox = Capture(ref dim));
         meter.Measure("DIM-constrained-default", () => CSharpDispose.Constrained(ref dim));

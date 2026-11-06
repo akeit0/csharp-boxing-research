@@ -17,6 +17,24 @@ internal static class CSharpDispose
         if (value is IDisposable disposable)
             disposable.Dispose();
     }
+
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    internal static void PatternThenCast<T>(ref T value)
+    {
+        if (value is IDisposable)
+            ((IDisposable)value).Dispose();
+    }
+
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    internal static void PatternThenCastWithWriteBack<T>(ref T value)
+    {
+        if (value is IDisposable)
+        {
+            var disposable = (IDisposable)value;
+            disposable.Dispose();
+            value = (T)disposable;
+        }
+    }
 }
 
 internal static class CachedDispatch<T>

@@ -8,6 +8,9 @@ DIM; afterDisposeOriginal=0; boxCount=1; sameObject=True
 DIM; constrainedDefaultDisposeOriginal=0
 allocation; case=box-escape; iterations=100000; bytes=2400000; events=-1; bytesPerCall=24.000
 allocation; case=is-IDisposable; iterations=100000; bytes=2400000; events=-1; bytesPerCall=24.000
+allocation; case=is-IDisposable-then-cast; iterations=100000; bytes=0; events=-1; bytesPerCall=0.000
+is-IDisposable-then-cast-with-write-back; countAfterFirstCall=42
+allocation; case=is-IDisposable-then-cast-with-write-back; iterations=100000; bytes=2400000; events=-1; bytesPerCall=24.000
 allocation; case=constrained-CSharp; iterations=100000; bytes=0; events=-1; bytesPerCall=0.000
 allocation; case=DIM-capture-escape; iterations=100000; bytes=2400000; events=-1; bytesPerCall=24.000
 allocation; case=DIM-constrained-default; iterations=100000; bytes=2400000; events=-1; bytesPerCall=24.000
